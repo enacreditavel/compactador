@@ -20,7 +20,7 @@ import org.jsoup.select.Elements;
 public class WebScrapingTest {
 	public static void main(String[] args) {
 		String websiteUrl = "https://www.gov.br/ans/pt-br/acesso-a-informacao/participacao-da-sociedade/atualizacao-do-rol-de-procedimentos/";
-		String outputFolder = "C:/Estudos/IntuitiveCare/testsJava"; // Pasta onde os arquivos serão
+		String outputFolder = "./Resultados"; // Pasta onde os arquivos serão
 																					// salvos
 		String zipPath = outputFolder + "/Anexos.zip";
 
@@ -37,10 +37,8 @@ public class WebScrapingTest {
 			// outputFolder
 			for (int i = 0; i < pdfUrls.size(); i++) {
 				pdfFiles[i] = downloadFile(pdfUrls.get(i), outputFolder);
-				System.out.println("Arquivo salvo em: " + pdfFiles[i]);
 			}
 
-			System.out.println("Downloads realizados: " + pdfFiles.length);
 
 			// Compacta os arquivos para um arquivo ZIP
 			zipFiles(pdfFiles, zipPath);
